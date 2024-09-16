@@ -4,7 +4,7 @@ import {Container, Row, Col } from "react-bootstrap"
 const MyNav = () => {
     return (
      <nav>
-        <Container fluid className="fixed-top mt-5">
+        <Container fluid className="fixed-top">
             <Row>
                 <Col lg={12} className="d-flex justify-content-around align-items-center bg-dark">
                 <p className="text-light">Home</p>
