@@ -7,15 +7,17 @@ const Welcome = () => {
 
     useEffect(() => {
         setIsModalVisible(true)
-        setTimeout(() => {
+        const timer = setTimeout(() => {
             setIsModalVisible(false)
         }, 2000)
+
+      
+        return () => clearTimeout(timer)
     }, [])
 
     return (
         isModalVisible && <MyModal show={isModalVisible} name={name} />
     )
-
 }
 
 export default Welcome
