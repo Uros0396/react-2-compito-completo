@@ -18,7 +18,7 @@ const Footer = () => {
                     
                 </Col>
                 <Col sm={12} md={6} lg={3} className="text-light text-center">  
-                    <p>"Shopping with points"</p>
+                    <p>Shopping with points</p>
                     <p>Top up my balance</p>
                     <p>Amazon currency converter</p>
                     

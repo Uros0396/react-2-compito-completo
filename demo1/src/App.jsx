@@ -12,7 +12,7 @@ function App() {
       <Welcome />
       <MainSezione />
       <Footer />
-      </>
+    </>
   );
 }
 
