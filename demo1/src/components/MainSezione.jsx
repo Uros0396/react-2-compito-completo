@@ -2,12 +2,20 @@ import fantasy from "../books/fantasy.json"
 import {Container, Row} from "react-bootstrap"
 
 import SingleBook from "./SingleBook"
-import InputBooks from "./InputBooks"
+//import InputBooks from "./InputBooks"
 import CustomCard from "./CustomCard/CustomCard"
-import { useMemo, useState } from "react"
+import { useContext, useMemo, useState } from "react"
+import SearcContext from "./SearcContext"
 
 const MainSezione = () => {
   const [selectedBook, setSelectedBook] = useState("")
+  const { searchTerm } = useContext(SearcContext);
+
+  const filteredBooks = searchTerm
+    ? fantasy.filter((book) =>
+        book.title.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : [];
 
   const randomBook = useMemo(() => fantasy.sort(() => Math.random() - 0.5), [])
 
@@ -17,7 +25,7 @@ const MainSezione = () => {
       <h2 className="text-center">Book of the Day</h2>
     </Row>
     <Row>
-      {randomBook.map((book) => (
+      {randomBook.slice(0, 1).map((book) => (
       <SingleBook
         key={book.asin}
         title={book.title}
@@ -25,21 +33,37 @@ const MainSezione = () => {
         img={book.img}
         category={book.category}
       />
-      )).slice(0, 1)} 
-      <Row>
-      <InputBooks/>
-    </Row>
+      ))} 
+      
+      
+  <Row className="mt-5">
+  <h3 className="text-center">Your Books</h3>
+  {searchTerm !== "" ? (
+    filteredBooks.length > 0 ? (
+      <ul>
+        {filteredBooks.map((book) => (
+          <li key={book.asin}>{book.title}</li>
+        ))}
+      </ul>
+    ) : (
+      <p className="text-center">Nessun libro trovato</p>
+    )
+  ) : (
+    null
+  )}
+</Row>
+    
       
     </Row>
       <Row className="gy-4 mt-5">
-        {fantasy.map((book) => (
+        {fantasy.slice(0, 10).map((book) => (
           <CustomCard
             key={book.asin}
             book={book}
             selectedBook={selectedBook}
             setSelectedBook={setSelectedBook}
           />
-        )).slice(0, 10)}
+        ))}
       </Row>
     </Container>
   )

@@ -1,8 +1,10 @@
 import {Container, Row, Col } from "react-bootstrap"
-
-
+import InputBooks from "./InputBooks";
 
 const MyNav = () => {
+  
+
+
     return (
      <nav>
         <Container fluid className="fixed-top">
@@ -14,7 +16,7 @@ const MyNav = () => {
                     <a href="#" className="text-light text-decoration-none">Browser</a>
                   </div>
                   <div>
-                  
+                  <InputBooks />
                   </div>
                 </Col>
             </Row>

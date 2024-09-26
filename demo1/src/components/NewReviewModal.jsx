@@ -4,7 +4,10 @@ import Modal from 'react-bootstrap/Modal';
 
 
 function NewReviewModal({show, setShow, asin, onReviewAdded}) {
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        setMessage(""); 
+        setShow(false);
+    };
     const [comment, setComment] = useState("")
     const [rate, setRate] = useState(1)
 
@@ -40,6 +43,7 @@ function NewReviewModal({show, setShow, asin, onReviewAdded}) {
         setComment('')
         setRate(1)
         onReviewAdded()
+        
     } else {
         setMessage("errore durante l' invio")
     }

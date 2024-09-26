@@ -1,20 +1,21 @@
-import { useState } from "react";
-import fantasy from "../books/fantasy.json";
+import { useContext } from "react";
+//import fantasy from "../books/fantasy.json";
+import SearcContext from "./SearcContext";
 
 
 const InputBooks = () => {
-    const [searchTerm, setSearchTerm] = useState("");
+    const {searchTerm, setSearchTerm} = useContext(SearcContext);
   
     const handleInputChange = (event) => {
       setSearchTerm(event.target.value);
     };
   
     
-    const filteredBooks = searchTerm
+    /*const filteredBooks = searchTerm
       ? fantasy.filter((book) =>
           book.title.toLowerCase().includes(searchTerm.toLowerCase())
         )
-      : [];
+      : [];*/
   
     return (
       <div>
@@ -24,13 +25,7 @@ const InputBooks = () => {
           value={searchTerm}
           onChange={handleInputChange}
         />
-        {searchTerm && (
-          <ul>
-            {filteredBooks.map((book) => (
-              <li key={book.asin}>{book.title}</li>
-            ))}
-          </ul>
-        )}
+      
       </div>
     );
   };
