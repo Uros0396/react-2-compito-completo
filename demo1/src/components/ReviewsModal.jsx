@@ -11,12 +11,9 @@ function ReviewsModal({show, setShow, asin}) {
 
 
   const handleClose = () => setShow(false);
-
   
-
-
-    const handleReviewAdded = () => {
-        setReloadReviews(true); 
+  const handleReviewAdded = () => {
+      setReloadReviews(true); 
   }
 
   

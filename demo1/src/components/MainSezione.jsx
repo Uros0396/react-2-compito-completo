@@ -5,11 +5,11 @@ import SingleBook from "./SingleBook"
 //import InputBooks from "./InputBooks"
 import CustomCard from "./CustomCard/CustomCard"
 import { useContext, useMemo, useState } from "react"
-import SearcContext from "./SearcContext"
+import SearchContext from "./SearchContext"
 
 const MainSezione = () => {
   const [selectedBook, setSelectedBook] = useState("")
-  const { searchTerm } = useContext(SearcContext);
+  const { searchTerm } = useContext(SearchContext);
 
   const filteredBooks = searchTerm
     ? fantasy.filter((book) =>

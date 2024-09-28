@@ -1,10 +1,10 @@
 import { useContext } from "react";
 //import fantasy from "../books/fantasy.json";
-import SearcContext from "./SearcContext";
+import SearchContext from "./SearchContext";
 
 
 const InputBooks = () => {
-    const {searchTerm, setSearchTerm} = useContext(SearcContext);
+    const {searchTerm, setSearchTerm} = useContext(SearchContext);
   
     const handleInputChange = (event) => {
       setSearchTerm(event.target.value);

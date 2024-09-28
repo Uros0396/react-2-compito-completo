@@ -7,7 +7,7 @@ const SingleBook = ({img, category, title, price}) => {
     return (
          <Col sm={12} className="d-flex justify-content-center align-items-center mt-5">
            <Card
-            className="h-50, w-50"
+            className="h-25, w-25"
            >
             <CardImg
               variant="top"
