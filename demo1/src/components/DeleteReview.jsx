@@ -1,6 +1,11 @@
+import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
+import ReviewsContext from './ReviewsContext';
 
-const DeleteReview = ({ id, onDeleteSuccess }) => {
+const DeleteReview = ({ id }) => {
+  
+  const {setReviewToReload, reviewToReload} = useContext(ReviewsContext)
+
   const handleDelete = async () => {
     try {
       const response = await fetch(
@@ -15,11 +20,13 @@ const DeleteReview = ({ id, onDeleteSuccess }) => {
         }
       );
 
-      if (response.ok) {
-       onDeleteSuccess(); 
-      } else {
+      if (!response.ok) {
         console.error('Errore durante la cancellazione del commento');
+        return
       }
+
+      setReviewToReload(!reviewToReload)
+
     } catch (error) {
       console.error('Errore nella richiesta:', error);
     }

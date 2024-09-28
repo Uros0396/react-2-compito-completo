@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Spinner } from "react-bootstrap"
 import DeleteReview from "./DeleteReview"
+import ReviewsContext from "./ReviewsContext"
 
 
-export default function ReviewCards({asin, reviewToReload}) {
+export default function ReviewCards() {
     const [reviews, setReviews] = useState([])
     const [loading, setLoading] = useState(false)
+    const {reviewToReload, asin} = useContext(ReviewsContext)
+
 
     const getData = async () => {
         try {
@@ -44,7 +47,7 @@ export default function ReviewCards({asin, reviewToReload}) {
             reviews.map((review, index) => (
                 <li key={index}>
                     {review.comment} - <b>{review.rate}</b> stars
-                    <DeleteReview id={review._id} onDeleteSuccess={() => setReload(!reload)}  />
+                    <DeleteReview id={review._id} />
                 </li>
             ))
         }
