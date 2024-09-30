@@ -5,9 +5,10 @@ import ReviewsContext from "./ReviewsContext"
 
 
 export default function ReviewCards() {
+    const { setComments, reviewToReload, asin } = useContext(ReviewsContext)
     const [reviews, setReviews] = useState([])
     const [loading, setLoading] = useState(false)
-    const {reviewToReload, asin} = useContext(ReviewsContext)
+    
 
 
     const getData = async () => {
@@ -54,3 +55,5 @@ export default function ReviewCards() {
     </ul>
     )
 }
+
+

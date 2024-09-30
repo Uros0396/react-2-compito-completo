@@ -5,6 +5,7 @@ import Welcome from './components/Welcome'
 import MainSezione from './components/MainSezione'
 import Footer from './components/Footer'
 import SearchContext from './components/SearchContext'
+import ReviewsContext, { ReviewsProvider } from './components/ReviewsContext';
 import { useState } from 'react'
 
 /*function App() {
@@ -24,14 +25,18 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
-    <>
+  
+      
       <SearchContext.Provider value={{ searchTerm, setSearchTerm }}>
         <MyNav />
         <Welcome />
         <MainSezione />
+        <Footer />
       </SearchContext.Provider>
-      <Footer />
-    </>
+      
+      
+   
+    
   )
 }
 

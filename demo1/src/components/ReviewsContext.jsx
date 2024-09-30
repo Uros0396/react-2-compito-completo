@@ -1,10 +1,34 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 const defaultValue = {
     reviewToReload: false,
-    setReviewToReload: () => {}
+    setReviewToReload: () => {},
+    comments: [], 
+    addComment: () => {},  
+    deleteComment: () => {}, 
+    setComments: () => {}, 
 }
 
-const ReviewsContext = createContext(defaultValue);
+const ReviewsContext = createContext();
 
-export default ReviewsContext
+export const ReviewsProvider = ({ children }) => {
+    const [comments, setComments] = useState([]);
+    const [reviewToReload, setReviewToReload] = useState(false);
+
+    const addComment = (comment) => {
+        setComments(prevComments => [...prevComments, comment]);
+    };
+
+    const deleteComment = (commentId) => {
+        setComments(prevComments => prevComments.filter(comment => comment.id !== commentId));
+    };
+
+    return (
+        <ReviewsContext.Provider value={{ reviewToReload, setReviewToReload, comments, setComments, addComment, deleteComment }}>
+            {children}
+        </ReviewsContext.Provider>
+    );
+};
+
+export default ReviewsContext;
+
