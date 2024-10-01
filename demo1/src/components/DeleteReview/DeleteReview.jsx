@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
-import ReviewsContext from './ReviewsContext';
+import ReviewsContext from '../ReviewsContext/ReviewsContext';
 
 
 const DeleteReview = ({ id }) => {

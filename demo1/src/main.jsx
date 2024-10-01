@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { DarkContext, DarkContextProvider } from './contexts/DarkContext.jsx'
-import { ReviewsProvider } from './components/ReviewsContext.jsx'
+import { ReviewsProvider } from './components/ReviewsContext/ReviewsContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

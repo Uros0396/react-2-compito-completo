@@ -1,6 +1,6 @@
 import { useContext } from "react";
 //import fantasy from "../books/fantasy.json";
-import SearchContext from "./SearchContext";
+import SearchContext from "../SearchContext/SearchContext";
 
 
 const InputBooks = () => {

@@ -1,7 +1,7 @@
 import {Container, Row, Col, Button } from "react-bootstrap"
-import InputBooks from "./InputBooks";
+import InputBooks from "../InputBooks/InputBooks";
 import { useContext } from "react";
-import { DarkContext } from "../contexts/DarkContext";
+import { DarkContext } from "../../contexts/DarkContext";
 
 
 const MyNav = () => {

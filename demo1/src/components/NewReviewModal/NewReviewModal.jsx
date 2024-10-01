@@ -1,7 +1,7 @@
 import {  useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import ReviewsContext from './ReviewsContext';
+import ReviewsContext from '../ReviewsContext/ReviewsContext';
 
 
 function NewReviewModal({show, setShow}) {

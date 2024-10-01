@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import ReviewCards from './ReviewCards';
 import NewReviewModal from './NewReviewModal';
-import ReviewsContext from './ReviewsContext';
+import ReviewsContext from '../ReviewsContext/ReviewsContext';
 
 
 function ReviewsModal({show, setShow, asin}) {

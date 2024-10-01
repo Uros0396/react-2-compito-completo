@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react"
 import { Spinner } from "react-bootstrap"
-import DeleteReview from "./DeleteReview"
-import ReviewsContext from "./ReviewsContext"
+import DeleteReview from "../DeleteReview/DeleteReview"
+import ReviewsContext from "../ReviewsContext/ReviewsContext"
 
 
 export default function ReviewCards() {

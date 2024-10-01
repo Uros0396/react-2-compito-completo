@@ -1,11 +1,11 @@
-import fantasy from "../books/fantasy.json"
+import fantasy from "../../books/fantasy.json"
 import { Col, Container, Row } from "react-bootstrap"
-import SingleBook from "./SingleBook"
-import CustomCard from "./CustomCard/CustomCard"
+import SingleBook from "../SingleBook/SingleBook"
+import CustomCard from "../CustomCard/CustomCard"
 import { useContext, useMemo, useState } from "react"
-import SearchContext from "./SearchContext"
-import { DarkContext } from "../contexts/DarkContext";
-import CommentArea from "./CommentArea";
+import SearchContext from "../SearchContext/SearchContext"
+import { DarkContext } from "../../contexts/DarkContext";
+import CommentArea from "../CommentArea/CommentArea";
 
 
 const MainSezione = () => {

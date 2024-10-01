@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import MyModal from "./MyModal"
+import MyModal from "../MyModal/Mymodal"
 
 const Welcome = () => {
     const [name, setName] = useState('Epicoder')

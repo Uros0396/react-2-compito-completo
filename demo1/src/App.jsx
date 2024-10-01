@@ -1,11 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
-import MyNav from './components/MyNav'
-import Welcome from './components/Welcome'
-import MainSezione from './components/MainSezione'
-import Footer from './components/Footer'
-import SearchContext from './components/SearchContext'
-import ReviewsContext, { ReviewsProvider } from './components/ReviewsContext';
+import MyNav from './components/MyNav/MyNav'
+import Welcome from './components/Welcome/Welcome'
+import MainSezione from './components/MainSection/MainSezione'
+import Footer from './components/Footer/Footer'
+import SearchContext from './components/SearchContext/SearchContext'
+import ReviewsContext, { ReviewsProvider } from './components/ReviewsContext/ReviewsContext';
 import { useState } from 'react'
 
 /*function App() {
