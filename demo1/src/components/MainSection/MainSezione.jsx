@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap"
 import SingleBook from "../SingleBook/SingleBook"
 import CustomCard from "../CustomCard/CustomCard"
 import { useContext, useMemo, useState } from "react"
-import SearchContext from "../SearchContext/SearchContext"
+import { SearchContext } from "../SearchContext/SearchContext"
 import { DarkContext } from "../../contexts/DarkContext";
 import CommentArea from "../CommentArea/CommentArea";
 

@@ -1,42 +1,28 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
-import MyNav from './components/MyNav/MyNav'
-import Welcome from './components/Welcome/Welcome'
-import MainSezione from './components/MainSection/MainSezione'
-import Footer from './components/Footer/Footer'
-import SearchContext from './components/SearchContext/SearchContext'
-import ReviewsContext, { ReviewsProvider } from './components/ReviewsContext/ReviewsContext';
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from './Pages/HomePage';
+import Home  from "./Pages/Home";
+import About from './Pages/About';
+import Browse from './Pages/Browse';
+import NotFound from './Pages/NotFound';
+import Detail from './Pages/Detail';
 
-/*function App() {
-  return (
-    <>
-      <MyNav />
-      <Welcome />
-      <MainSezione />
-      <Footer />
-    </>
-  );
-}
-
-export default App*/
 
 const App = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-
-  return (
   
-      
-      <SearchContext.Provider value={{ searchTerm, setSearchTerm }}>
-        <MyNav />
-        <Welcome />
-        <MainSezione />
-        <Footer />
-      </SearchContext.Provider>
-      
-      
-   
-    
+  return (
+    <BrowserRouter>
+              <Routes>
+                 <Route exact path='/' element={<HomePage />} />
+                 <Route path='/Home' element={<Home />} /> 
+                 <Route path='/About' element={<About />} />
+                 <Route path='/Browse' element={<Browse />} />
+                 <Route path='/Detail/:asin' element={<Detail />} />
+
+                 <Route path='*' element={<NotFound />} />
+              </Routes>
+    </BrowserRouter>
   )
 }
 

@@ -1,7 +1,14 @@
 import { useEffect, useState } from "react";
-import { Card, CardBody, CardImg, CardText, CardTitle } from "react-bootstrap";
+import { Card, CardBody, CardFooter, CardImg, CardText, CardTitle, Button } from "react-bootstrap";
 import './CustomCard.css';
+import { useNavigate } from "react-router-dom";
 const CustomCard = ({ book, selectedBook, setSelectedBook }) => {
+  
+  const navigate = useNavigate()
+  const handleRedirecttoDetail = () => {
+    navigate(`/Detail/${book.asin}`)
+  }
+
   const [isClicked, setIsClicked] = useState(false);
 
   const clickOnCard = () => {
@@ -29,6 +36,16 @@ const CustomCard = ({ book, selectedBook, setSelectedBook }) => {
           <CardText className="m-0">{book.price}</CardText>
         </div>
       </CardBody>
+      <CardFooter>
+      
+      <Button 
+          onClick={handleRedirecttoDetail}  
+          className="btn btn-info w-100"
+        >
+          Details
+        </Button>
+      
+      </CardFooter>
     </Card>
   );
 };
